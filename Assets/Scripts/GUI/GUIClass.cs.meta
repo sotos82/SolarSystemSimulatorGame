@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 99bb57d070976bc4cbba5580ba8faccd
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - customSkin: {fileID: 11400000, guid: 4fa01e6ba2390db4892cd6c14761a481, type: 2}
+  - plusIcon: {fileID: 2800000, guid: 8063f0032d5bfd74c8ed933e4067c227, type: 3}
+  - minusIcon: {fileID: 2800000, guid: 5d43fba74ba146149b1b70d29fbb4220, type: 3}
+  - playIcon: {fileID: 2800000, guid: c16bb4fba09ae6e489eb894c4a5c5f7a, type: 3}
+  - stopIcon: {fileID: 2800000, guid: 82dfc29ccc693ce4ca497cd77a73a379, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
