@@ -18,7 +18,7 @@ public class GUIClass : MonoBehaviour
     "Click on object to get info\n" +
     "Double click to focus.";
 
-    private const string creditsMessage = "Version 1.01 \n\n Programmer: Sotos\n\n Music: Comfortable Mystery, incompetech.com";
+    private const string creditsMessage = "Version 1.02 \n\n Programmer: Sotos\n\n Music: Comfortable Mystery, incompetech.com";
     private const string controlsMessage1 = "Right click & move: rotate\n" +
     "Wheel: zoom in/out\n" +
     "Click on object to get info\n" +
