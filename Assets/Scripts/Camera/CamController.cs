@@ -133,7 +133,7 @@ public class CamController : MonoBehaviour
             
             case Mode.isZooming:
             
-		   			if(lockedTransform != null)
+		   if(lockedTransform != null)
                     	UnlockObject();
 
                     float s0 = LinePlaneIntersect(transform.forward, transform.position, Vector3.up, Vector2.zero, ref CamPlanePoint);
