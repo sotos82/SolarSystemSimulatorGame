@@ -6,16 +6,17 @@ public class CamController : MonoBehaviour
 {
     public Transform lockedTransform { get; private set; }
 
-    private Transform targetRotation;
     public float xSpeed = 200.0f;
     public float ySpeed = 200.0f;
-    public int yMinLimit = -80;
-    public int yMaxLimit = 80;
-    public int zoomRate = 40;
+    public float yMinLimit = -80;
+    public float yMaxLimit = 80;
+    public float zoomRate = 40;
     public bool panMode = false;
     public float panSpeed = 0.3f;
     public int panThres = 5;
     public float rotationDampening = 5.0f;
+    
+    private Transform targetRotation;
     private float xDeg = 0.0f;
     private float yDeg = 0.0f;
     private Vector3 desiredPosition;
@@ -90,6 +91,12 @@ public class CamController : MonoBehaviour
             mode = Mode.isRotating;
         } else if (Input.GetMouseButtonUp(1))
         {
+      		yDeg = transform.rotation.eulerAngles.x;
+            if (yDeg > 180)
+                yDeg -= 360;
+            
+            xDeg = transform.rotation.eulerAngles.y;
+        	
             mode = Mode.isIdle;
         } else if (MouseXBoarder() != 0 || MouseYBoarder() != 0)
         {
@@ -106,12 +113,6 @@ public class CamController : MonoBehaviour
         switch (mode)
         {
             case Mode.isIdle:
-
-				xDeg = transform.rotation.eulerAngles.y;
-
-                yDeg = transform.rotation.eulerAngles.x;
-                if(yDeg > 180)
-                    yDeg -= 360;
 
                 break;
             
@@ -131,8 +132,9 @@ public class CamController : MonoBehaviour
                 break;
             
             case Mode.isZooming:
-
-                    UnlockObject();
+            
+		   			if(lockedTransform != null)
+                    	UnlockObject();
 
                     float s0 = LinePlaneIntersect(transform.forward, transform.position, Vector3.up, Vector2.zero, ref CamPlanePoint);
                     targetRotation.position = transform.forward * s0 + transform.position;
