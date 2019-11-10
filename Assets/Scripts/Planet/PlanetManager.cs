@@ -149,7 +149,7 @@ public class PlanetManager : MonoBehaviour
 			CreateMoon (moonNames [i], moonParentNames [i], Resources.Load (moonMaterials [i]) as Material, moonParameters [i]);
 
 		rings = Instantiate (Resources.Load ("Prefabs/Rings") as GameObject) as GameObject;
-		rings.transform.parent = Planet.planetList [5].transform.FindChild (meshChildPrefix + "Saturn");
+		rings.transform.parent = Planet.planetList [5].transform.Find (meshChildPrefix + "Saturn");
 		rings.transform.localScale = new Vector3 (5, 5, 5);
 	}
     
@@ -164,8 +164,8 @@ public class PlanetManager : MonoBehaviour
 
 		AddRigidBody (ref planet, Scales.massScale * par [7]);
 
-		planet.transform.FindChild ("Planet").name = meshChildPrefix + name;
-		planet.transform.FindChild ("BB").name = "BB" + name;
+		planet.transform.Find ("Planet").name = meshChildPrefix + name;
+		planet.transform.Find ("BB").name = "BB" + name;
 
 		planet.transform.localScale = new Vector3 (par [3], par [3], par [3]);
 
@@ -182,8 +182,8 @@ public class PlanetManager : MonoBehaviour
 		moon.name = name;
 		moon.tag = "Moon";
 		
-		moon.transform.FindChild ("Planet").name = meshChildPrefix + name;
-		moon.transform.FindChild ("BB").name = "BB" + name;
+		moon.transform.Find ("Planet").name = meshChildPrefix + name;
+		moon.transform.Find ("BB").name = "BB" + name;
 		
 		moon.transform.localScale = new Vector3 (par [3], par [3], par [3]);
 		
