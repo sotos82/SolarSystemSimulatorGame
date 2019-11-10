@@ -57,8 +57,9 @@ public class AuxOrbit : MonoBehaviour
 		lineRendererLength = 40;
 		line = gameObject.GetComponent<LineRenderer> () as LineRenderer;
 		line.material = Resources.Load ("Materials/LineAux") as Material;
-		line.SetWidth (5f, 5f);
-		line.SetVertexCount (lineRendererLength);
+		line.startWidth = 5f;
+		line.endWidth = 5f;
+		line.positionCount = lineRendererLength;
 	}
 	
 	void Update ()

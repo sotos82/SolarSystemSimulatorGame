@@ -41,8 +41,8 @@ public class MissileManager : MonoBehaviour
 
 			spaceCraft.tag = "SpaceCraft";
 
-			spaceCraft.transform.FindChild ("MissileMesh").name = "Mesh" + spaceCraft.name;
-			spaceCraft.transform.FindChild ("BB").name = "BB" + spaceCraft.name;
+			spaceCraft.transform.Find ("MissileMesh").name = "Mesh" + spaceCraft.name;
+			spaceCraft.transform.Find ("BB").name = "BB" + spaceCraft.name;
 			spaceCraft.transform.parent = transform;
 
 			velocity = POEarth.ParametricVelocity ();

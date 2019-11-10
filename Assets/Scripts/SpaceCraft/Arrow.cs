@@ -22,7 +22,7 @@ public class Arrow : MonoBehaviour
 		arrowMat.SetTexture ("_MainTex", Resources.Load ("Textures/Arrow") as Texture);
 
 		GetComponent<MeshFilter> ().mesh = BillBoardMesh (width, length);
-		GetComponent<MeshFilter> ().mesh.Optimize ();
+		// GetComponent<MeshFilter> ().mesh.Optimize ();
 
 		GetComponent<Renderer> ().material = arrowMat;
 
