@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: replaced 'glstate.matrix.mvp' with 'UNITY_MATRIX_MVP'
 
 Shader "Custom/AtmosphereFromSpace" {
@@ -106,7 +108,7 @@ v2f vert (float4 vertex : POSITION) {
   }
  
   v2f OUT;
-  OUT.position = mul( UNITY_MATRIX_MVP, vertex);
+  OUT.position = UnityObjectToClipPos( vertex);
   OUT.t0 = _CameraPosition.xyz - vertex.xyz;
   OUT.c0.rgb = frontColor * (_InvWaveLength.xyz * _KrESun);
   OUT.c1.rgb = frontColor * _KmESun;
