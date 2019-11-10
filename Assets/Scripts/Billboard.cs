@@ -23,7 +23,7 @@ public class Billboard : MonoBehaviour
 		billMat.SetTexture ("_MainTex", Resources.Load ("Textures/" + name.Substring (name.LastIndexOf ('B') + 1) + "Bill") as Texture);
         
 		GetComponent<MeshFilter> ().mesh = BillBoardMesh (3, 3);
-		var o_25_2_637089145118360340 = GetComponent<MeshFilter> ().mesh;
+		// GetComponent<MeshFilter> ().mesh.Optimize ();
 		GetComponent<Renderer> ().material = billMat;
 
 		scale = transform.localScale.x;
